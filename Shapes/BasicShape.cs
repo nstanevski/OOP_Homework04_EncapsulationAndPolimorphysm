@@ -29,8 +29,11 @@ namespace Shapes
             }
             set
             {
-                if (value > 0)
-                    this.width = value;
+                if (value <= 0)
+                {
+                    throw new InvalidOperationException("Can't assign non-positive width");
+                }
+                this.width = value;
             }
         }
 
@@ -40,11 +43,14 @@ namespace Shapes
             {
                 return this.height;
             }
-            set
-            {
-                if (value > 0)
-                    this.height = value;
+            set{
+                if (value <= 0)
+                {
+                    throw new InvalidOperationException("Can't assign non-positive height");
+                }
+                this.height = value;
             }
+           
         }
     }
 }
