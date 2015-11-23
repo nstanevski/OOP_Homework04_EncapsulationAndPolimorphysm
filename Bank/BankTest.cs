@@ -61,18 +61,15 @@ class BankTest
             }catch (UnathorizedTransactionException ex){
                     Console.WriteLine(ex.Message);
             }
+            Console.WriteLine("Balance after withdrawal: {0:c}", acc.Ballance);
 
-            Console.WriteLine(acc);
-            Console.WriteLine("Interest for {0} months is: {1:c}",
+           
+            Console.WriteLine("Balance with added interest for {0} months is: {1:c}",
                 months, acc.CalculateInterest(months));
             Console.WriteLine("===========================");
 
 
             months += 2;
         }
-
-
-
-
     }
 }
